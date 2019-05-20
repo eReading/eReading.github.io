@@ -1,1 +1,1 @@
-# eReading.github.io
+# easy reading project

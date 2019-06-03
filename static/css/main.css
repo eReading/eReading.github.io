@@ -341,7 +341,8 @@ padding: 0;
     font-size: 1.3em;
 }
 .card-body{
-    margin-bottom: 50px;
+    margin-bottom: 3px;
+    padding: 1em
 }
 p{
     margin: 0;

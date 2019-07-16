@@ -1,0 +1,27 @@
+<html>
+<meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2.3. Defining documents &mdash; MongoEngine 0.18.2 documentation</title>
+</body>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Link</span><span class="p">(</span><span class="n">Document</span><span class="p">):</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">StringField</span><span class="p">()</span>
+
+<span class="k">class</span> <span class="nc">Post</span><span class="p">(</span><span class="n">Document</span><span class="p">):</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">StringField</span><span class="p">()</span>
+
+<span class="k">class</span> <span class="nc">Bookmark</span><span class="p">(</span><span class="n">Document</span><span class="p">):</span>
+    <span class="n">bookmark_object</span> <span class="o">=</span> <span class="n">GenericReferenceField</span><span class="p">()</span>
+
+<span class="n">link</span> <span class="o">=</span> <span class="n">Link</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s1">&#39;http://hmarr.com/mongoengine/&#39;</span><span class="p">)</span>
+<span class="n">link</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+
+<span class="n">post</span> <span class="o">=</span> <span class="n">Post</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Using MongoEngine&#39;</span><span class="p">)</span>
+<span class="n">post</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+
+<span class="n">Bookmark</span><span class="p">(</span><span class="n">bookmark_object</span><span class="o">=</span><span class="n">link</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+<span class="n">Bookmark</span><span class="p">(</span><span class="n">bookmark_object</span><span class="o">=</span><span class="n">post</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+</pre></div>
+</body>
+</html>
